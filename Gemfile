@@ -70,3 +70,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'grape', '~> 1.2', '>= 1.2.4'
 gem 'grape-entity', '~> 0.7.1'
 gem 'grape_on_rails_routes', '~> 0.3.2'
+
+#twitter gem
+gem 'twitter', '~> 6.2'
+
+#This gem is required to load .env file
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'

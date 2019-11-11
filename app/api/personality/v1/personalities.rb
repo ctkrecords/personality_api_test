@@ -11,6 +11,15 @@ module Personality
                     users = User.all
                     present users
                 end
+
+                desc 'Return the attribute pass on the uri'
+                route_param :username do 
+                    get do
+                        usname = params[:username]
+                        #User.create!(username: params[:username])
+                        present usname 
+                    end
+                end
             end
         end
     end
