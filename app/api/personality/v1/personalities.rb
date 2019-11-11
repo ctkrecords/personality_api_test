@@ -16,8 +16,9 @@ module Personality
                 route_param :username do 
                     get do
                         usname = params[:username]
+                        response = UserTweets.twitter_search(params[:username])
                         #User.create!(username: params[:username])
-                        present usname 
+                        present response
                     end
                 end
             end
