@@ -6,27 +6,21 @@ module UserTweets
             config.access_token        = ENV.fetch("TWITTER_ACCESS_TOKEN")
             config.access_token_secret = ENV.fetch("TWITTER_ACCESS_TOKEN_SECRET")
         end
-        
-        #client.user_timeline(username).take(6).collect do |tweet|
-        #    puts "#{tweet.user.screen_name}: #{tweet.text}"
-        #end
 
         begin
-            response = client.user_timeline(username).take(6)
+            response = client.user_timeline(username, count: 200)
         rescue Twitter::Error => e 
             response = nil
         end
 
         if response.nil?
-            response = "This username doesn't exists!"
+            response
         else
             cad = ""
             response.each do |tweet|
-                cad.concat(tweet.text, " ")
+                cad.concat(tweet.text, "\n")
             end
             cad
         end
-        
-        
     end
 end
