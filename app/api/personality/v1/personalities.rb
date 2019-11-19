@@ -18,13 +18,13 @@ module Personality
                         usname = params[:username]
                         response = UserTweets.twitter_search(params[:username])
                         if response.nil?
-                            response = "We sorry, your request can\'t be process, please try later"
+                            #response = "We sorry, your request can\'t be process, please try later"
                             present response
                         else
                             #User.create!(username: params[:username])
-                            file = File.open("lib/assets/tweets.txt", "w")
-                            file.puts response
-                            file.close
+                            #file = File.open("lib/assets/tweets.txt", "w")
+                            #file.puts response
+                            #file.close
                             #system("ruby lib/personality_traits.rb")
                             present response
                         end

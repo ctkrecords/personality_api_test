@@ -76,5 +76,3 @@ gem 'twitter', '~> 6.2'
 
 #This gem is required to load .env file
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
-
-gem 'ibm_watson'
