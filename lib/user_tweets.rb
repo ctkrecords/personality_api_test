@@ -1,10 +1,10 @@
 module UserTweets
     def self.twitter_search(username)
         client = Twitter::REST::Client.new do |config|
-            config.consumer_key        = "Ce1hUsinSHGerD9BL37CKU81p"#ENV.fetch("TWITTER_CONSUMER_KEY")
-            config.consumer_secret     = "c4zqxpjt4w2tvvchQWkw4rOhLT3ri4UBgaittiCFeHy1CXtLvJ"#ENV.fetch("TWITTER_CONSUMER_SECRET")
-            config.access_token        = "71112106-TpCpyll0ru4p05v9leqiHHZ9NWboxhtjtKqX45wpO"#ENV.fetch("TWITTER_ACCESS_TOKEN")
-            config.access_token_secret = "MOJk06Z4mColWVHCzFNsvZYQMuANCojVDyXZ9yyqiAt5u"#ENV.fetch("TWITTER_ACCESS_TOKEN_SECRET")
+            config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+            config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
+            config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
+            config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
         end
 
         begin
