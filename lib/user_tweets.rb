@@ -9,8 +9,8 @@ module UserTweets
 
         begin
             response = client.user_timeline(username, count: 200)
-        rescue Twitter::Error => e 
-            response = nil
+        rescue Twitter::Error => e
+            response = e
         end
 
         if response.nil?
